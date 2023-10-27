@@ -111,8 +111,6 @@ namespace br.dev.optimus.hermes.lib
         {
             if (!document.IsReday) throw new NotRedayException("document is not reday");
             client ??= GetClient();
-            if (document.DepartmentId == null) throw new Exception("department is null");
-            if (document.DocumentTypeId == null) throw new Exception("document type is null");
             if (document.Name == null) throw new Exception("name is null");
             if (document.Identity == null) throw new Exception("identity is null");
             if (document.Code == null) throw new Exception("code is null");
