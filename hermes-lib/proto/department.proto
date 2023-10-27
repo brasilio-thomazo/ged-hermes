@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "br.dev.optimus.hermes.grpc";
+option csharp_namespace = "br.dev.optimus.hermes.grpc";
+option go_package = "hermes/pb";
+option objc_class_prefix = "HLW";
+
+package hermes;
+
+message DepartmentReply {
+    uint64 id = 1;
+    string name = 2;
+    uint64 created_at = 3;
+    uint64 updated_at = 4;
+}
+
+message ListDepartment {
+    repeated DepartmentReply data = 1;
+}
+
+message DepartmentRequest{
+    string name = 1;
+}

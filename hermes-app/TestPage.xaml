@@ -1,0 +1,46 @@
+﻿<Page x:Class="br.dev.optimus.hermes.app.TestPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:br.dev.optimus.hermes.app"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="TestPage"
+      Name="Page">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <TextBlock Text="Departamento:" Margin="5" />
+        <ComboBox Name="departments" Grid.Column="1" Margin="5"
+                  ItemsSource="{Binding ElementName=Page, Path=Departments}"
+                  DisplayMemberPath="Name" SelectedValuePath="Id" />
+        <Button Content="Atualizar" Grid.Column="2" Margin="5" Padding="10,5" Click="DepartmentReload" />
+        <TextBlock Grid.Row="1" Text="Tipo de documento:" Margin="5" />
+        <ComboBox Grid.Row="1" Name="documentTypes" Grid.Column="1" Margin="5"
+                  ItemsSource="{Binding ElementName=Page, Path=DocumentTypes}"
+                  DisplayMemberPath="Name" SelectedValuePath="Id" />
+        <Button Grid.Row="1" Content="Atualizar" Grid.Column="2" Margin="5" Padding="10,5"
+                Click="DocumentTypeReload" />
+        <TextBlock Text="Imagens:" Grid.Row="2" Margin="5" />
+        <TextBox Grid.Column="1" Grid.Row="2" Margin="5" VerticalContentAlignment="Center" Name="images" />
+        <Button Grid.Row="2" Grid.Column="2" Content="Pesquisar..." Margin="5" Padding="10,5"
+                Click="SelectImages" />
+        <TextBox Grid.Row="3" Grid.ColumnSpan="3" Margin="5" Padding="10,5" Name="logs" ScrollViewer.VerticalScrollBarVisibility="Auto" />
+        <StackPanel Grid.Row="4" Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Content="Enviar" Margin="5" Padding="10,5" Click="Send"/>
+            <Button Content="Gerar arquivo" Margin="5" Padding="10,5" Click="GenerateFile"/>
+        </StackPanel>
+    </Grid>
+</Page>

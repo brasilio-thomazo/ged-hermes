@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "br.dev.optimus.hermes.grpc";
+option csharp_namespace = "br.dev.optimus.hermes.grpc";
+option go_package = "hermes/pb";
+option objc_class_prefix = "HLW";
+
+package hermes;
+
+message DocumentReply {
+  string id = 1;
+  uint64 document_type_id = 2;
+  uint64 department_id = 3;
+  string code = 4;
+  string identity = 5;
+  string name = 6;
+  string comment = 7;
+  string storage = 8;
+  string date_document = 9;
+  uint64 created_at = 10;
+  uint64 updated_at = 11;
+}
+
+message ListDocument {
+  repeated DocumentReply data = 1;
+}
+
+message DocumentRequest {
+  uint64 document_type_id = 1;
+  uint64 department_id = 2;
+  string code = 3;
+  string identity = 4;
+  string name = 5;
+  string comment = 6;
+  string storage = 7;
+  string date_document = 8;
+}

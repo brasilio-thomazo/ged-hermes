@@ -1,0 +1,22 @@
+﻿<Window x:Class="br.dev.optimus.hermes.app.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Filler - [leia, antes de perguntar] :: Versão de teste, isso não é a versão final" Height="450" Width="800">
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="Arquivo">
+                <MenuItem Header="Fechar" Click="Finish" />
+            </MenuItem>
+            <MenuItem Header="Executar">
+                <MenuItem Header="Manual" Click="LoadExecute" />
+            </MenuItem>
+            <MenuItem Header="Ajuda">
+                <MenuItem Header="Executar teste" Click="TestHandler" />
+            </MenuItem>
+        </Menu>
+        <Frame Name="mainFrame" NavigationUIVisibility="Hidden" />
+    </DockPanel>
+</Window>

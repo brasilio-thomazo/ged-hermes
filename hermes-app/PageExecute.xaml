@@ -1,0 +1,19 @@
+﻿<Page x:Class="br.dev.optimus.hermes.app.PageExecute"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:br.dev.optimus.hermes.app"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PageExecute">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <TextBox ScrollViewer.VerticalScrollBarVisibility="Auto" Name="logs" />
+        <Button Grid.Row="1" Content="Iniciar" Margin="5" Padding="10,5" HorizontalAlignment="Right" Click="ExecuteFiles" />
+    </Grid>
+</Page>

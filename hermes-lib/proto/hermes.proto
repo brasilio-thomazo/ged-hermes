@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "br.dev.optimus.hermes.grpc";
+option go_package = "hermes/pb";
+option csharp_namespace = "br.dev.optimus.hermes.grpc";
+option objc_class_prefix = "HLW";
+
+package hermes;
+
+import "document.proto";
+import "document_image.proto";
+import "department.proto";
+import "document_type.proto";
+
+message ListRequest {}
+
+service Hermes {
+  rpc DocumentStore(DocumentRequest) returns (DocumentReply);
+  rpc DocumentList(ListRequest) returns (ListDocument);
+  rpc DepartmentStore(DepartmentRequest) returns (DepartmentReply);
+  rpc DepartmentList(ListRequest) returns (ListDepartment);
+  rpc DocumentTypeStore(DocumentTypeRequest) returns (DocumentTypeReply);
+  rpc DocumentTypeList(ListRequest) returns (ListDocumentType);
+  rpc DocumentImageStore(stream DocumentImageRequest) returns (DocumentImageReply);
+}
