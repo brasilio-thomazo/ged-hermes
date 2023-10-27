@@ -8,9 +8,9 @@ namespace br.dev.optimus.hermes.lib.models
         [JsonPropertyName("id")]
         public string? Id { get; set; }
         [JsonPropertyName("document_type_id")]
-        public ulong? DocumentTypeId { get; set; }
+        public ulong DocumentTypeId { get; set; } = 1;
         [JsonPropertyName("department_id")]
-        public ulong? DepartmentId { get; set; }
+        public ulong DepartmentId { get; set; } = 2;
         [JsonPropertyName("code")]
         public string? Code { get; set; }
         [JsonPropertyName("identity")]
