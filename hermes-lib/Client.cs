@@ -25,6 +25,10 @@ namespace br.dev.optimus.hermes.lib
             return new Hermes.HermesClient(channel);
         }
 
+        /// <summary>
+        /// Get list of departments
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<Department>? GetDepartments()
         {
             client ??= GetClient();
@@ -40,6 +44,10 @@ namespace br.dev.optimus.hermes.lib
             });
         }
 
+        /// <summary>
+        /// Get list of departments
+        /// </summary>
+        /// <returns></returns>
         public async Task<IEnumerable<Department>?> GetDepartmentsAsync()
         {
             client ??= GetClient();
@@ -54,6 +62,10 @@ namespace br.dev.optimus.hermes.lib
             });
         }
 
+        /// <summary>
+        /// Get list of document types
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<DocumentType>? GetDocumentTypes()
         {
             client ??= GetClient();
@@ -69,6 +81,10 @@ namespace br.dev.optimus.hermes.lib
             });
         }
 
+        /// <summary>
+        /// Get list of document types
+        /// </summary>
+        /// <returns></returns>
         public async Task<IEnumerable<DocumentType>?> GetDocumentTypesAsync()
         {
             client ??= GetClient();
@@ -84,6 +100,13 @@ namespace br.dev.optimus.hermes.lib
             });
         }
 
+        /// <summary>
+        /// Store document
+        /// </summary>
+        /// <param name="document"></param>
+        /// <returns></returns>
+        /// <exception cref="NotRedayException"></exception>
+        /// <exception cref="Exception"></exception>
         public async Task<Document> StoreDocumentAsync(Document document)
         {
             if (!document.IsReday) throw new NotRedayException("document is not reday");
@@ -115,6 +138,12 @@ namespace br.dev.optimus.hermes.lib
             return document;
         }
 
+        /// <summary>
+        /// Store document image
+        /// </summary>
+        /// <param name="document"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public async Task<Document> StoreImageAsync(Document document)
         {
             client ??= GetClient();
@@ -152,6 +181,11 @@ namespace br.dev.optimus.hermes.lib
             return document;
         }
 
+        /// <summary>
+        /// Generate PDF of document files
+        /// </summary>
+        /// <param name="document"></param>
+        /// <exception cref="Exception"></exception>
         private static void GeneratePDF(ref Document document)
         {
             if (document.Id == null) throw new Exception("document id is null");
